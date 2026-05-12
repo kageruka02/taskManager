@@ -25,4 +25,11 @@ public class TaskController {
     public List<Task> getTasks() {
         return service.getAllTasks();
     }
+
+    @PutMapping("/{id}")
+    public Task updateTask(@PathVariable Long id,
+                           @RequestBody Task task) {
+
+        return service.updateTask(id, task);
+    }
 }
