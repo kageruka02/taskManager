@@ -3,9 +3,10 @@ package com.example.taskmanager.service;
 import com.example.taskmanager.model.Task;
 import com.example.taskmanager.repository.TaskRepository;
 import org.springframework.stereotype.Service;
-
+import lombok.extern.slf4j.Slf4j;
 import java.util.List;
 
+@Slf4j
 @Service
 public class TaskService {
 
@@ -16,6 +17,9 @@ public class TaskService {
     }
 
     public Task createTask(Task task) {
+
+
+        log.info("Creating task: {}", task.getTitle());
         return repository.save(task);
     }
 
